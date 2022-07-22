@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ExpenseController;
+use App\Models\category;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,4 +26,14 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
+Route::get('/categories',[CategoryController::class,'index']);
+Route::get('/category/create',[CategoryController::class,'create']);
+Route::post('/categories',[CategoryController::class,'store']);
+Route::get('/categories/{category:id}/edit',[CategoryController::class,'edit']);
+Route::patch('/categories',[CategoryController::class,'update']);
+Route::get('/expenses',[ExpenseController::class,'index']);
+Route::get('/expenses/{expense}',[ExpenseController::class,'show']);
 Route::get('/expense/create',[ExpenseController::class,'create']);
+Route::post('/expenses',[ExpenseController::class,'store']);
+Route::get('/expenses/{expense:id}/edit',[ExpenseController::class,'edit']);
+Route::patch('/expenses/{expense:id}', [ExpenseController::class, 'update']);

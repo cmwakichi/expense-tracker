@@ -24,7 +24,7 @@ class ExpenseFactory extends Factory
             'name' => $this->faker->text,
             'expense_date'=> $this->faker->date('Y-m-d'),
             'amount'=> $this->faker->randomFloat(),
-            'description'=> $this->faker->paragraphs(3)
+            'description'=> $this->faker->text
 
         ];
     }

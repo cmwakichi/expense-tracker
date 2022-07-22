@@ -7,8 +7,13 @@
     <title>{{ $title ?? 'Expense Tracker' }}</title>
 </head>
 <body>
-<h1>Todos</h1>
+<div class="bg-green-500 text-center p-10 text-2xl">
+    <h1>Expenses Management System</h1>
+</div>
 <hr/>
-{{ $slot }}
+
+<div>
+    {{ $slot }}
+</div>
 </body>
 </html>
